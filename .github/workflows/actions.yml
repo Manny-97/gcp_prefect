@@ -1,0 +1,15 @@
+name: Create Cloud Storage Bucket
+
+on: push
+
+jobs:
+  terraform-create:
+    name: terraformcreate
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Terraform Plan
+        run: terraform plan
+      - name: Terraform Apply
+        run: terraform apply --auto-approve
+      - name: Terraform Destroy
+        run: terraform destroy --auto-approve
